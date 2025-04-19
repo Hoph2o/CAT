@@ -1,6 +1,7 @@
 # CAT 1.3.0
 from reaper_python import *
 import C3toolbox
+import C4toolbox
 import create_beattrack
 import create_animation_markers
 import filter_notes
@@ -30,6 +31,7 @@ import create_phrase_markers
 import trim_phrase_markers
 import compact_harmonies
 import add_vocalsoverdrive
+import add_overdrive
 import fix_textevents
 import cleanup_phrases
 import compound_phrases
@@ -139,8 +141,10 @@ if __name__ == '__main__':
     reducepatternBtn.grid(row=3, column=1, columnspan=1, sticky="WE", padx=5, pady=2)
     
     prokeysreduceBtn = Tkinter.Button(sec5lane, text="Reduce pro keys note density based on 5-lane", command= lambda: execute_this('remove_notes_prokeys')) 
-    prokeysreduceBtn.grid(row=3, column=2, columnspan=3, sticky="WE", padx=5, pady=2)
-    
+    prokeysreduceBtn.grid(row=3, column=2, columnspan=2, sticky="WE", padx=5, pady=2)
+
+    overdriveBtn = Tkinter.Button(sec5lane, text="Add Overdrive", command=lambda: execute_this('add_overdrive'))
+    overdriveBtn.grid(row=3, column=4, columnspan=2, sticky="WE", padx=5, pady=2)
 
     secDrums = Tkinter.LabelFrame(root, text=" Drums: ")
     secDrums.grid(row=2, columnspan=5, sticky='WE', \
